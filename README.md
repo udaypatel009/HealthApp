@@ -5,7 +5,7 @@ Give the answers of question.Can skip any question
 
 Get the result about you.Try again!
 
-![Image of Health app Screenshots](https://tinyurl.com/y8nptwkn)
+![health app Screenshots](https://user-images.githubusercontent.com/8373949/83882632-06bd7500-a760-11ea-89ac-2897447a36f9.jpeg)
 
 ## 30 Days of Kotlin
 
