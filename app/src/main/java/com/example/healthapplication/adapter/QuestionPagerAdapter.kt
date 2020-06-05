@@ -61,14 +61,15 @@ class QuestionPagerAdapter(val questionData: List<QuestionData>) :
                 (itemView.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
             if (questionData.questionType.equals(QuestionTypeConstant().EDITTEXTQUESTION)) {
                 val view: View = inflater.inflate(R.layout.layout_edit_text, null)
-                view.edtQuestionAnswer.hint = questionData.questionHint
+//                view.edtQuestionAnswer.hint = questionData.questionHint
+                view.txtQuestionAnswer.hint = questionData.questionHint
 
                 if (questionData.inputType.equals("textNumber")) {
                     view.edtQuestionAnswer.inputType =
                         InputType.TYPE_CLASS_TEXT
                 } else if (questionData.inputType.equals("number")) {
                     view.edtQuestionAnswer.inputType =
-                        InputType.TYPE_CLASS_NUMBER
+                        InputType.TYPE_CLASS_PHONE
                 }
                 itemView.questionAnswers.addView(view, 0)
             } else if (questionData.questionType.equals(QuestionTypeConstant().RADIOQUESTION)) {
