@@ -1,0 +1,74 @@
+{
+  "questionData": [
+    {
+      "questionId": 1,
+      "question": "Enter Your Name?",
+      "questionQuote": "Every name is real. That's the nature of names.",
+      "questionType": "edittext",
+      "inputType": "textNumber",
+      "questionHint": "Please Enter Your Name Here",
+      "answer": [
+
+      ]
+    },
+    {
+      "questionId": 1,
+      "question": "Select Your Gender?",
+      "questionQuote": "We should be able to see human just as humans.",
+      "questionType": "radio",
+      "inputType": "",
+      "questionHint": "Please Select Your Gender",
+      "answer": [
+        {
+          "answerId": 1,
+          "answerOption": "Male"
+        },
+        {
+          "answerId": 2,
+          "answerOption": "Female"
+        }
+      ]
+    },
+    {
+      "questionId": 3,
+      "question": "Enter Your Height(in cms)?",
+      "questionQuote": "There is no top. There are always further heights to reach.",
+      "questionType": "edittext",
+      "inputType": "number",
+      "questionHint": "Please Select Your Height",
+      "answer": [
+
+      ]
+    },
+    {
+      "questionId": 4,
+      "question": "Enter Your Age",
+      "questionQuote": "Age is an issue of mind over matter.If you don't mind, it doesn't matter",
+      "questionType": "edittext",
+      "inputType": "number",
+      "questionHint": "Please Select Your Age",
+      "answer": [
+        {
+          "answerId": 7,
+          "answerOption": "0-10"
+        },
+        {
+          "answerId": 8,
+          "answerOption": "11-20"
+        },
+        {
+          "answerId": 9,
+          "answerOption": "21-40"
+        },
+        {
+          "answerId": 10,
+          "answerOption": "41-60"
+        },
+        {
+          "answerId": 11,
+          "answerOption": "61-100"
+        }
+      ]
+    }
+  ]
+}

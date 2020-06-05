@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.healthapplication.viewmodel.MainViewModel" />
+        <variable
+            name="eventHandler"
+            type="com.example.healthapplication.eventhandler.MainEventHandler" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_10sdp"
+        tools:context=".activity.MainActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Your Health"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/_20sdp"
+            android:layout_margin="@dimen/_8sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/questionPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/_40sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/txtTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout="@layout/fragment_question_page"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/questionPager"
+            app:layout_constraintEnd_toEndOf="@id/questionPager"
+            app:layout_constraintBottom_toBottomOf="@id/questionPager"
+            android:layout_marginBottom="@dimen/_25sdp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnPrevious"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:rotation="180"
+                android:padding="@dimen/_8sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:visibility="@{viewModel.questionNumber > 1 ? View.VISIBLE : View.GONE, default=gone}"
+                android:onClick="@{()-> eventHandler.previous()}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/txtQuestionNumber"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtQuestionNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="1/10"
+                android:text="@{viewModel.questionNumber.toString().concat(  ` / `).concat(viewModel.totalQuestion.toString())}"
+                android:textSize="@dimen/_20sdp"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnNext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:padding="@dimen/_8sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:visibility="@{viewModel.questionNumber != viewModel.totalQuestion ? View.VISIBLE : View.GONE, default=gone}"
+                android:onClick="@{()-> eventHandler.next()}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtQuestionNumber"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@{viewModel.finalActionText}"
+            android:textSize="@dimen/_20sdp"
+            android:onClick="@{()-> eventHandler.finalAction()}"
+            tools:text="SKIP"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

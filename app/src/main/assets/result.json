@@ -1,0 +1,44 @@
+{
+  "resultData": [
+    {
+      "resultId": 1,
+      "result": "You wiil be a good person"
+    },
+    {
+      "resultId": 2,
+      "result": "You will be a team leader"
+    },
+    {
+      "resultId": 3,
+      "result": "You will be a good life partner"
+    },
+    {
+      "resultId": 4,
+      "result": "You will be successful"
+    },
+    {
+      "resultId": 5,
+      "result": "You are most stylist person in your group"
+    },
+    {
+      "resultId": 6,
+      "result": "You need to work hard"
+    },
+    {
+      "resultId": 7,
+      "result": "You need to do more exersice"
+    },
+    {
+      "resultId": 8,
+      "result": "You are a lucky person"
+    },
+    {
+      "resultId": 9,
+      "result": "You need to drink more amount of water"
+    },
+    {
+      "resultId": 10,
+      "result": "Take care of your diet"
+    }
+  ]
+}
